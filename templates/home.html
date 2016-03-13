@@ -8,9 +8,9 @@
 		UC Berkeley.">
 		<meta name="author" content="Jingyi, Josh, Nada, Angira, Xiaojie">
 
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='style.css') }}>
 
-		<title>Rock'n'Roller</title>
+		<title>Rock'n'Roller - Paint While You Skate</title>
 
 	</head>
 	<body>
@@ -21,21 +21,29 @@
 				<h1> Your Rock 'n' Roller is Here </h1>
 			</div>
 			<div class="map">
-					<iframe
-					  width="900"
-					  height="450"
-					  frameborder="0" style="border:0"
-					  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-d9iMvR_4UMVhP8tFlc4gwFiSceNpBDM
-					    &q=Jacobs+Hall+Berkeley" allowfullscreen>
-					</iframe>
+				<!-- Specify values using variables? 
+					need origin = origin
+					current location = destination
+					waypoints = all past destinations
+					-->
+				<iframe
+					width="900"
+					height="450"
+					frameborder="0" style="border:0"
+					src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyA-d9iMvR_4UMVhP8tFlc4gwFiSceNpBDM
+					    &origin={{ origin }}
+					    &destination={{ destination }}
+					    &waypoints={{ waypoints }}
+					    &mode=walking" allowfullscreen>
+				</iframe>
 			</div>
 		</div>
 		<!-- Description / Info -->
 		<div class="background white-bg">
 			<div class="content margin-top centered">
-				<img class="branding" src="images/orange-logo.png">
-				<img class="branding" src="images/yellow-logo.png">
-				<img class="branding" src="images/blue-logo.png">
+				<img class="branding" src={{ url_for('static', filename='orange-logo.png') }}>
+				<img class="branding" src={{ url_for('static', filename='yellow-logo.png') }}>
+				<img class="branding" src={{ url_for('static', filename='blue-logo.png') }}>
 			</div>
 			<div class="content margin-bottom">
 				<h2> So What is Rock 'n' Roller? </h2>

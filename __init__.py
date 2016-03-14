@@ -17,7 +17,7 @@ def home():
 @app.route('/loc/<lat>/<lng>')
 def echo_loc(lat, lng):
     locations.append((lat, lng))
-    return ''
+    return str(locations)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
